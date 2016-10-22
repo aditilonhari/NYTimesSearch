@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.codepath.nytimessearch.adapters.FilterDialogFragment"/>
+        <variable
+            name="filter_dialog_fragment"
+            type="FilterDialogFragment"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_for_filters"
+            android:paddingLeft="@dimen/margin_for_filters"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:textColor="#000080"
+            android:text="@string/tvDate"
+            android:id="@+id/tvDate" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_for_filters"
+            android:hint="@string/hint_date"
+            android:inputType="text"
+            android:id="@+id/etDate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_for_filters"
+            android:paddingLeft="@dimen/margin_for_filters"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:textColor="#000080"
+            android:text="@string/tvSortOrder"
+            android:id="@+id/tvSortOrder" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_for_filters"
+            android:id="@+id/spinnerID"
+            android:entries="@array/SortOrder"
+            android:spinnerMode="dropdown" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_for_filters"
+            android:paddingLeft="@dimen/margin_for_filters"
+            android:paddingStart="@dimen/margin_for_filters"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="@string/newsDeskValues"
+            android:textColor="#000080"
+            android:id="@+id/textViewName" />
+
+        <CheckBox android:id="@+id/checkbox_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_for_filters"
+            android:layout_marginStart="@dimen/margin_for_filters"
+            android:text="@string/art" />
+        <CheckBox android:id="@+id/checkbox_fashionStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_for_filters"
+            android:layout_marginStart="@dimen/margin_for_filters"
+            android:text="@string/fashionStyle" />
+        <CheckBox android:id="@+id/checkbox_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_for_filters"
+            android:layout_marginStart="@dimen/margin_for_filters"
+            android:text="@string/sports" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_for_filters"
+            style="@style/FilterButton"
+            android:imeOptions="actionDone"
+            android:text="@string/filter" />
+
+    </LinearLayout>
+</layout>
