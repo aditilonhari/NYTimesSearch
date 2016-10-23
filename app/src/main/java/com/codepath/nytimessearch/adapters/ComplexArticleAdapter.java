@@ -1,6 +1,7 @@
 package com.codepath.nytimessearch.adapters;
 
 import android.content.Context;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
@@ -8,12 +9,15 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.codepath.nytimessearch.BR;
 import com.codepath.nytimessearch.R;
 import com.codepath.nytimessearch.models.Article;
 import com.codepath.nytimessearch.models.VH_Article;
 import com.codepath.nytimessearch.models.VH_NoImageArticle;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -25,6 +29,10 @@ public class ComplexArticleAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     private List<Article> mArticles;
     private Context mContext;
+    @BindingAdapter("bind:imageUrl")
+    public static void loadImage(ImageView imageView, String url) {
+        Picasso.with(imageView.getContext()).load(url).into(imageView);
+    }
 
     private final int ARTICLE = 0, ARTICLE_NO_IMAGE = 1;
 
@@ -65,13 +73,12 @@ public class ComplexArticleAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         switch (viewType) {
             case ARTICLE:
-                ViewDataBinding viewDataBinding = DataBindingUtil.inflate(inflater, R.layout.item_vh_article, parent, false);
-                viewHolder = new VH_Article(viewDataBinding);
-
+                ViewDataBinding v1Binding = DataBindingUtil.inflate(inflater, R.layout.item_vh_article, parent, false);
+                viewHolder = new VH_Article(v1Binding);
                 break;
             case ARTICLE_NO_IMAGE:
-                View v2 = inflater.inflate(R.layout.item_vh_no_image_article, parent, false);
-                viewHolder = new VH_NoImageArticle(v2);
+                ViewDataBinding v2Binding = DataBindingUtil.inflate(inflater, R.layout.item_vh_no_image_article, parent, false);
+                viewHolder = new VH_NoImageArticle(v2Binding);
                 break;
             default:
                 View v = inflater.inflate(R.layout.item_simple_article, parent, false);
@@ -94,22 +101,25 @@ public class ComplexArticleAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final Article article = mArticles.get(position);
+        ViewDataBinding viewDataBinding;
 
         switch (viewHolder.getItemViewType()) {
             case ARTICLE:
                 VH_Article vh1 = (VH_Article) viewHolder;
-                ViewDataBinding viewDataBinding = vh1.getViewDataBinding();
-                viewDataBinding.setVariable(com.codepath.nytimessearch.models, mArticles.get(position));
+                viewDataBinding = vh1.getViewDataBinding();
+                viewDataBinding.setVariable(BR.vh_article, article);
                 break;
             case ARTICLE_NO_IMAGE:
                 VH_NoImageArticle vh2 = (VH_NoImageArticle) viewHolder;
-                vh2.binding.setVh_noimage_article(article);
+                viewDataBinding = vh2.getViewDataBinding();
+                viewDataBinding.setVariable(BR.vh_noimage_article, article);
                 break;
             default:
                 ArticleAdapter.ViewHolder vh = (ArticleAdapter.ViewHolder) viewHolder;
                 configureDefaultViewHolder(vh, position);
                 break;
         }
+
     }
 
     private void configureDefaultViewHolder(ArticleAdapter.ViewHolder vh, int position) {

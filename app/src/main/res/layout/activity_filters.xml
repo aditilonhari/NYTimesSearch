@@ -17,15 +17,16 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/margin_for_filters"
             android:paddingLeft="@dimen/margin_for_filters"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size"
             android:textStyle="italic"
-            android:textColor="#000080"
+            android:textColor="@color/cardViewText"
             android:text="@string/tvDate"
             android:id="@+id/tvDate" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_filter"
             android:paddingLeft="@dimen/margin_for_filters"
             android:hint="@string/hint_date"
             android:inputType="text"
@@ -36,9 +37,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/margin_for_filters"
             android:paddingLeft="@dimen/margin_for_filters"
-            android:textSize="20dp"
+            android:textSize="@dimen/font_size"
             android:textStyle="italic"
-            android:textColor="#000080"
+            android:textColor="@color/cardViewText"
             android:text="@string/tvSortOrder"
             android:id="@+id/tvSortOrder" />
 
@@ -46,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/margin_for_filters"
+            android:textSize="@dimen/font_size_filter"
             android:id="@+id/spinnerID"
             android:entries="@array/SortOrder"
             android:spinnerMode="dropdown" />
@@ -57,10 +59,10 @@
             android:paddingTop="@dimen/margin_for_filters"
             android:paddingLeft="@dimen/margin_for_filters"
             android:paddingStart="@dimen/margin_for_filters"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size"
             android:textStyle="italic"
             android:text="@string/newsDeskValues"
-            android:textColor="#000080"
+            android:textColor="@color/cardViewText"
             android:id="@+id/textViewName" />
 
         <CheckBox android:id="@+id/checkbox_art"
@@ -68,16 +70,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_for_filters"
             android:layout_marginStart="@dimen/margin_for_filters"
+            android:textSize="@dimen/font_size_filter"
             android:text="@string/art" />
         <CheckBox android:id="@+id/checkbox_fashionStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_for_filters"
             android:layout_marginStart="@dimen/margin_for_filters"
+            android:textSize="@dimen/font_size_filter"
             android:text="@string/fashionStyle" />
         <CheckBox android:id="@+id/checkbox_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_filter"
             android:layout_marginLeft="@dimen/margin_for_filters"
             android:layout_marginStart="@dimen/margin_for_filters"
             android:text="@string/sports" />

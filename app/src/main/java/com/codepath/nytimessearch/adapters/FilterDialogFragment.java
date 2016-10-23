@@ -83,7 +83,7 @@ public class FilterDialogFragment extends DialogFragment implements TextView.OnE
 
         beginDate.setOnClickListener(v -> {
             InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.RESULT_HIDDEN);
+            inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
             initDatePicker();
             datePicker.show();
         });

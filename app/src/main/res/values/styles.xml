@@ -19,9 +19,9 @@
 
     <style name="FilterButton" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/cardViewText</item>
         <item name="android:background">@drawable/filter_button_states</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/font_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>

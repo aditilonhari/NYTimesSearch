@@ -46,6 +46,7 @@ public class SearchActivity extends AppCompatActivity implements FilterDialogFra
 
     @BindView(R.id.rvArticles) RecyclerView rvArticles;
 
+
     static final int FILTER_ACTIVITY = 1;
     List<Article> articles;
     ComplexArticleAdapter rvAdapter;
@@ -56,6 +57,7 @@ public class SearchActivity extends AppCompatActivity implements FilterDialogFra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_search);
         initialize();
         hideKeyboard();
@@ -122,7 +124,6 @@ public class SearchActivity extends AppCompatActivity implements FilterDialogFra
     }
 
     private void initialize() {
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
@@ -266,25 +267,4 @@ public class SearchActivity extends AppCompatActivity implements FilterDialogFra
 
         getDataFromUrl(0);
     }
-
 }
-    /*private void getDataFromUrl(String url, RequestParams params){
-        adapter.clear();
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url, params, new TextHttpResponseHandler() {
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                Log.e("DEBUG", responseString);
-            }
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                Type collectionType = new TypeToken<List<Article>>() {
-                }.getType();
-                Gson gson = new Gson();
-                articles = gson.fromJson(responseString, collectionType);
-                adapter.notifyDataSetChanged();
-            }
-        });
-
-    }*/

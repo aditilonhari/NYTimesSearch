@@ -4,6 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="image_dimen">75dp</dimen>
-    <dimen name="margin_for_filters">20dp</dimen>
-    <dimen name="padding_for_articles">10dp</dimen>
+    <dimen name="margin_for_filters">10dp</dimen>
+    <dimen name="padding_for_articles">5dp</dimen>
+    <dimen name="font_size">16sp</dimen>
+    <dimen name="font_size_filter">13sp</dimen>
 </resources>
