@@ -52,14 +52,25 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Adding filters to include the  non-alpha, non-numeric characters was an issue. Using URIEncoder solved the issue.
+- Sharing the link for an implicit intent in a chrome tab had clashes with the inbuilt chrome sharing option.
+- Modal Overlay sizing was an issue, used Linear layout to fix that.
+- StaggeredGrid view setting were difficult to manage. Found Android Cardview option which was much easier to implement and help
+- Understanding the working of Data binding was challenging initially.
+- Getting Data Binding and Heterogenous layouts to work was a task
 
 ## Open-source libraries used
 
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
+- [Android CardView] (https://developer.android.com/reference/android/support/v7/widget/CardView.html) - To make better GridView displays
+- [Android Data Binding Library] (https://developer.android.com/topic/libraries/data-binding/index.html) - Connect views with data in a much more powerful way
+- [Java8 Lamba Expressions] (https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) - Helps eliminate boilerplate code that makes the syntax verbose and less clear
+- [Parceler](https://parceler.org/) - Third-party library to automate the boilerplate code work in [Parcelable](https://developer.android.com/reference/android/os/Parcelable.html)
 - [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
 - [Glide](http://inthecheesefactory.com/blog/get-to-know-glide-recommended-by-google/en) - Image loading and caching library for Android (Much faster and efficient than Picasso)
 
 ## License
+
 
     Copyright 2016 Aditi Lonhari
 
